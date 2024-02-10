@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top: -120px;">
+    <div>
+      <h4 class="text">How about turning our texts into reality and</h4>
+      <h1 class="header_text">Going on a date together?</h1>
+    </div>
+    <div class="gif_container">
+      <img src="./Please.gif" alt="Cute animated illustration">
+    </div>
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+
+      <script>
+        function nextPage() {
+          window.location.href = "Yes_Page.html";
+        }
+
+        function moveButton() {
+          var button = document.getElementById("noButton");
+          var x = Math.random() * (window.innerWidth - button.offsetWidth);
+          var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+          // Ensure the button stays within the page
+          x = Math.max(x, 0);
+          y = Math.max(y, 0);
+          x = Math.min(x, window.innerWidth - button.offsetWidth);
+          y = Math.min(y, window.innerHeight - button.offsetHeight);
+
+          button.style.left = `${x}px`;
+          button.style.top = `${y}px`;
+        }
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>
